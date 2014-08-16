@@ -32,6 +32,116 @@ lemma:
  
  :. An = Bn ∪ An-1
 
+Ex 2
+----
+
+*theory 2.a* P(∅) = 0
+
+assume:
+    P(∅) > 0
+    
+P(Ω) = 1
+P(Ω) + P(∅)= 1 + P(∅) -- + P(∅) both sides
+P(Ω ∪ ∅) = 1 + P(∅) -- Ω & ∅  are disjoint, Yolo!
+P(Ω ∪ ∅) > 1 -- assumption
+P(Ω) > 1 -- simp 
+
+contradiction :. P(∅) = 0
+
+*theory 2.b* A ⊂ B --> P(A) <= P(B)
+
+let: B = A ∪ C, C ∩ A = ∅
+P(B) = P(A ∪ C) -- prob int
+P(B) = P(A) + P(C) -- 3.
+P(B) >= P(A) -- P(C) >= 0 > 0 if C != ∅, 0 if C == ∅
+
+*theory 2.c* 0 <= P(A) <= 1
+
+∅ ⊂ A ⊂ Ω  -- def
+0 <= P(A) <= 1 -- by theory 2.a, 2.b and axiom 1
+
+*theory 2.d* P(A^) = 1 - P(A)
+
+Ω = A^ ∪ A -- LEM
+P(Ω) = P(A^ ∪ A) -- Prob intro
+P(Ω) = P(A^) + P(A) -- since A and A^ are disjoint
+1 = P(A^) + P(A) -- 2
+1 - P(A^) = P(A)
+
+*theory 2.e* A ∩ B = ∅ ==> P(A ∪ B) = P(A) + P(B)
+
+
+   P(A ∪ B)
+ = P(A ∪ B ∪ ∅ ...) -- since X ∪ ∅  = X
+ = P(A) + P(B) + P(∅ ) + ... -- axiom 3
+ = P(A) + P(B)
+
+
+Ex 3
+----
+
+a.
+Bn = An ∪ An+1 ∪ An+2 ...
+Bn+1 = An+1 ∪ An+2 ...
+
+An ∪ An+1 ∪ An+2 ... ⊃ An+1 ∪ An+2 ... 
+CLEARLY, Bn ⊃ Bn+1
+
+Cn = An ∩ An+1 ∩ An+2 ...
+Cn+1 = An+1 ∩ An+2 ...
+
+An ∩ An+1 ∩ An+2 ... ⊂ An+1 ∩ An+2 ... 
+Yolo, Cn ⊂ Cn+1
+
+b.
+ω ∈ ∩ n=1,∞Bn
+
+assume:
+   there exists an n | ∀ i >= n, ω ∉ Ai.
+
+:. ω ∉ Bn
+:. ω ∉ ∩ n=1,∞Bn
+
+ω ∈ ∩ n=1,∞Bn --> ¬(exists n, ∀ i >= n, ω ∉  Ai) -- contrapos
+ω ∈ ∩ n=1,∞Bn --> ∀ n, ¬(∀ i |i >= n, ω ∉ Ai)
+ω ∈ ∩ n=1,∞Bn --> ∀ n, exists i|i >= n, ω ∈ Ai
+ω ∈ ∩ n=1,∞Bn --> ∀ i, ω ∈ Ai -- simp
+
+assume:
+   ∀ i|ω ∈ Ai
+
+∀ n ω ∈ Bn, since every Ai st i >= n contains ω
+then ω ∈ ∩ n=1,∞Bn
+
+c.
+   ω ∈ ∪ n=1,∞Cn
+ = exists n | ω ∈ Cn
+ = exists n, ∀ i | i >= n, ω ∈ Ai 
+ = ∀ i, ω ∈ Ai, except 1 ... n -1 (ie a finite number of them)
+
+Ex 4
+----
+
+   (∪,i∈ I,Ai)^
+ = {ω∈ Ω ∧ ¬∃ i|i∈ I,ω ∈ Ai} -- def
+ = {ω∈ Ω ∧ ∀ i|i∈ I,ω ∈ Ai^}
+ = ∩,i∈ I,Ai^ -- def
+
+Ex 5
+----
+
+let C = {H,T}
+let w1 ... w∞ be members of C
+let n ∈ natural numbers
+Ω = { ω = (w1, w2 ... wn) ∧ |{wi∈ ω|wi=H}| = 2 }
+
+k-1/2^(k-1)
+
+Ex 6
+----
+
+
+
 Ex 8
 ----
 

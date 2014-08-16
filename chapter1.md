@@ -140,6 +140,24 @@ k-1/2^(k-1)
 Ex 6
 ----
 
+Probility of each element is 1/N, ie 1/∞ = 0.
+sum of 0s is 0, but the probability of all events is 1.
+Yolo.
+
+Ex 7
+----
+
+let Bn = An - (∪i=1,n,An)
+Bns are disjoint from Ex1.
+
+   ∪n=1,∞,An  = ∪n=1,∞,Bn -- Ex1.
+
+   P(∪n=1,∞,An)
+ = P(∪n=1,∞,Bn) -- Prod int
+ = ∑n=1,∞P(Bn) -- 3.
+
+ We know that P(Bn) <= P(An) since Bn ⊂  An
+ so P(∪n=1,∞,An) <= ∑n=1,∞P(An)
 
 
 Ex 8
@@ -151,13 +169,25 @@ Ex 8
  = 1
  = P(Ai) * P(Aj)
 
-
 *Proof*:
    P(i=1,∞,∩Ai)
  = A1 * A2 * ... * A∞ -- by independence
  = 1 * 1 * ... * 1
  = 1
 
+Ex 10
+-----
+
+   P(win | ¬ switch)
+ = P(door 1 after pick) -- only way its possible
+ = P(door 1 before pick) -- independence
+ = 1/3
+
+   P(win | switch)
+ = 1 - P(¬win | switch)
+ = 1 - P(door 1)
+ = 1 - 1/3
+ = 2/3
 
 Ex 11
 -----

@@ -1,4 +1,37 @@
 
+Ex 1
+----
+
+a. let n be > m
+
+   Bn ∩ Bm
+ = An ∩ An-1^ ∩ ... Am^ ... A1^ ∩ Am ∩ An-2^ ...
+ = ∅ ∩ An ∩ An-1^ ∩ An-2^ ...
+ = ∅
+
+b. by induction
+
+base:
+    A1 = B1 -- def
+
+inductive:
+    assume An-1 = ∪i=1,n-1,Bi
+
+   An
+ = Bn ∪ An-1 -- lemma
+ = Bn ∪ ∪i=1,n-1,Bi -- assumption
+ = ∪i=1,n,Bi
+
+lemma:
+  Bn = An ∩ An-1^ ∩ ... A1^ -- def
+  Bn ∪ An-1 = An ∩ An-1^ ∩ ... A1^ ∪ An-1 -- ∪ An-1 both sides
+  Bn ∪ An-1 = An ∩ (An-1^ ∪ An-1) ∩ (An-2^ ∪ An-1) ∩ ... -- dist
+  Bn ∪ An-1 = An ∩ Ω ∩ (An-2^ ∪ An-1) ∩ ... -- simp
+  Bn ∪ An-1 = An ∩ Ω ∩ Bn-2 ∩ Bn-3 ... -- simp
+  Bn ∪ An-1 = An -- simp
+ 
+ :. An = Bn ∪ An-1
+
 Ex 8
 ----
 
@@ -74,7 +107,7 @@ assume:
   X > 0 ∧ X < 1.
 P(A) = P(A) * P(A) -- independence
 X = X * X
-but there's no X | 0 < X < 1 where X = X * X
+but theres no X | 0 < X < 1 where X = X * X
 therefore P(A) = 0 ∨ P(A) = 1
 
 
